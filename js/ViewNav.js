@@ -1,7 +1,9 @@
+import Content from "./Content.js";
 import View from "./View.js";
-import Resource from "./logic/Resource.js";
 
 export default class ViewNav extends View {
+
+    buttons = [];
 
     constructor() {
         super();
@@ -9,13 +11,29 @@ export default class ViewNav extends View {
 
     connectedCallback() {
         this.innerText = "Nav";
+        {
+            this.append(document.createElement("br"));
+            const button = document.createElement("button");
+            button.innerText = "Overview";
+            this.append(button);
+            this.buttons[Content.SUMMARY] = button;
+        }
+        {
+            this.append(document.createElement("br"));
+            const button = document.createElement("button");
+            button.innerText = "Buildings";
+            this.append(button);
+            this.buttons[Content.BUILDINGS] = button;
+        }
     }
 
     update() {
-        const resources = this.game.getResources();
-        for (let i = 0; i < Resource.length(); i++) {
-            this.resources.innerText = resources[i];
-        }
+
+    }
+
+    setViewMain(viewMain) {
+        this.buttons[Content.SUMMARY].addEventListener("click", function () { viewMain.setContent(Content.SUMMARY) });
+        this.buttons[Content.BUILDINGS].addEventListener("click", function () { viewMain.setContent(Content.BUILDINGS) });
     }
 
 }

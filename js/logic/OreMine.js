@@ -1,6 +1,6 @@
-import BuildingHarvest from "./BuildingHarvest.js";
+import ProductionBuilding from "./ProductionBuilding.js";
 
-export default class OreMine extends BuildingHarvest {
+export default class OreMine extends ProductionBuilding {
 
     constructor() {
         super();

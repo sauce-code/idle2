@@ -3,6 +3,8 @@ import Resource from "./logic/Resource.js";
 
 export default class ViewHeader extends View {
 
+    tdResources = [];
+
     constructor() {
         super();
     }
@@ -21,11 +23,10 @@ export default class ViewHeader extends View {
         }
         {
             const tr = document.createElement("tr");
-            this.resources = [];
             for (let i = 0; i < Resource.length(); i++) {
                 const td = document.createElement("td");
                 td.innerText = "0";
-                this.resources.push(td);
+                this.tdResources.push(td);
                 tr.appendChild(td);
             }
             this.table.appendChild(tr);
@@ -36,7 +37,7 @@ export default class ViewHeader extends View {
     update() {
         const resources = this.game.getResources();
         for (let i = 0; i < Resource.length(); i++) {
-            this.resources.innerText = resources[i];
+            this.tdResources[i].innerText = Math.floor(Object.values(resources)[i]);
         }
     }
 

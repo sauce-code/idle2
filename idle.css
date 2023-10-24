@@ -41,6 +41,20 @@ th {
     color: white;
 }
 
+view-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    background-color: #99ff99;
+    display: grid;
+    grid-template-columns: 100px 1000px;
+    /*grid-template-rows: auto;*/
+    grid-template-areas:
+        "header header"
+        "nav main"
+        "footer footer";
+}
+
 view-header {
     grid-area: header;
     background-color: #999;
@@ -61,16 +75,10 @@ view-footer {
     background-color: #999;
 }
 
-view-container {
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
-    background-color: #99ff99;
-    display: grid;
-    grid-template-columns: 100px 1000px;
-    /*grid-template-rows: auto;*/
-    grid-template-areas:
-        "header header"
-        "nav main"
-        "footer footer";
+content-summary {
+    background-color: #aaa;
+}
+
+content-buildings {
+    background-color: #aaa;
 }

@@ -1,6 +1,6 @@
-import BuildingHarvest from "./BuildingHarvest.js";
+import ProductionBuilding from "./ProductionBuilding.js";
 
-export default class FoodYard extends BuildingHarvest {
+export default class FoodYard extends ProductionBuilding {
 
     constructor() {
         super();

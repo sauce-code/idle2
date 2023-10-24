@@ -1,6 +1,6 @@
 import Building from "./Building.js";
 
-export default class BuildingHarvest extends Building {
+export default class ProductionBuilding extends Building {
 
     static WATER_SPRING = 0;
     static FOOD_YARD = 1;
@@ -16,7 +16,7 @@ export default class BuildingHarvest extends Building {
 
     constructor(level=0) {
         super(level);
-        if (this.constructor == BuildingHarvest) {
+        if (this.constructor == ProductionBuilding) {
             throw new Error("Abstract classes can't be instantiated.");
         }
     }

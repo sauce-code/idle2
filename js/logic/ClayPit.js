@@ -1,6 +1,6 @@
 import ProductionBuilding from "./ProductionBuilding.js";
 
-export default class ResearchCenter extends ProductionBuilding {
+export default class ClayPit extends ProductionBuilding {
 
     constructor() {
         super();

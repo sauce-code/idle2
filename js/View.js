@@ -5,11 +5,11 @@ export default class View extends HTMLElement {
 
     constructor() {
         super();
-        this.setVisible(true);
     }
 
     connectedCallback() {
-
+        this.setVisible(true);
+        this.state = View.OVERVIEW;
     }
 
     setVisible(visible) {
@@ -19,6 +19,10 @@ export default class View extends HTMLElement {
 
     setGame(game) {
         this.game = game;
+    }
+
+    update() {
+        throw new Error("Method 'update()' must be implemented.");
     }
 
 }

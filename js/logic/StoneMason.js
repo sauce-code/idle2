@@ -1,6 +1,7 @@
-import BuildingHarvest from "./BuildingHarvest.js";
+import ProductionBuilding from "./ProductionBuilding.js";
+import Stash from "./Stash.js";
 
-export default class StoneMason extends BuildingHarvest {
+export default class StoneMason extends ProductionBuilding {
 
     constructor() {
         super();
@@ -14,6 +15,10 @@ export default class StoneMason extends BuildingHarvest {
         const costLumber = 7 * (1,2 ** this.level);
         const costStone = 3.5 * (1,2 ** this.level);
         return new Stash(0, 0, costLumber, 0, costStone, 0, 0);
+    }
+
+    getUpgradeTime() {
+        return this.level * 10 * 1_000;
     }
 
 }

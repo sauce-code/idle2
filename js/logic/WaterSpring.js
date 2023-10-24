@@ -1,6 +1,6 @@
-import BuildingHarvest from "./BuildingHarvest.js";
+import ProductionBuilding from "./ProductionBuilding.js";
 
-export default class WaterSpring extends BuildingHarvest {
+export default class WaterSpring extends ProductionBuilding {
 
     constructor() {
         super();

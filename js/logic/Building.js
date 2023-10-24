@@ -1,3 +1,6 @@
+import Event from "./Event.js";
+import Stash from "./Stash.js";
+
 export default class Building {
 
     static WATER_SPRING = 0;
@@ -9,6 +12,8 @@ export default class Building {
     static GOLD_MINE = 6;
     static CONSTRUCTION_CENTER = 7;
     static RESEARCH_CENTER = 8;
+
+    level;
 
     static length() {
         return 9;
@@ -22,7 +27,12 @@ export default class Building {
     }
 
     getCost() {
-        throw new Error("Method 'getCost()' must be implemented.");
+        return new Stash();
+        //throw new Error("Method 'getCost()' must be implemented.");
+    }
+
+    getUpgradeTime() {
+        return 1;
     }
 
     getLevel() {
@@ -35,6 +45,15 @@ export default class Building {
 
     isVisible() {
         throw new Error("Method 'isVisible()' must be implemented.");
+    }
+
+    upgrade(stash) {
+        const cost = this.getCost();
+        if (!stash.includes(cost)) {
+            return undefined;
+        }
+        stash.subtract(cost);
+        return new Event(new Date(), this.getUpgradeTime());
     }
 
 }
